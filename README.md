@@ -1,6 +1,6 @@
 # Sudoku App
 
-Sudoku app built with Electron and Node.js. Python Sudoku puzzle generator adapted from https://github.com/g-k-l/sudokugen. 
+Sudoku app built with Electron and Node.js. Python Sudoku puzzle generator (engine/sudoku_gen.py) from https://github.com/g-k-l/sudokugen. 
 
 ## Clone the repo
 https://github.com/angelalamb/sudoku-app
