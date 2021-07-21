@@ -13,12 +13,12 @@ https://nodejs.org/en/
 https://www.electronjs.org/docs/tutorial/installation
 
 ### Install Python libraries
-pip install numpy 
-pip install sys 
-pip install enum 
-pip install random 
-pip install copy 
-pip install sudokugen 
+pip install numpy   
+pip install sys   
+pip install enum   
+pip install random        
+pip install copy     
+pip install sudokugen     
 
 ## Run the application
 npm start
