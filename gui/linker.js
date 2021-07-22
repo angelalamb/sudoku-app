@@ -1,5 +1,6 @@
 // Sudoku table
 const table = document.createElement('table');
+const confetti = require('canvas-confetti');
 
 // Console
 const nodeConsole = require('console');
@@ -14,7 +15,7 @@ function getParam() {
     const idx = document.URL.indexOf('?');
     if (idx != -1) {
         const pair = document.URL.substring(idx + 1, 
-                     document.URL.length).split('&');
+                                            document.URL.length).split('&');
         nameVal = pair[0].split('=');
         param = nameVal[1];
     }
@@ -40,15 +41,13 @@ function buildTable() {
             drow.insertCell(-1).innerHTML = '';
         }
     }
-    document.getElementById('tablediv').appendChild(table);
+    document.getElementById('table-div').appendChild(table);
 }
 
 function launchPython() {
     let exec = require('child_process').exec;
-    //var nodeConsole = require('console');
-    //var myConsole = new nodeConsole.Console(process.stdout, process.stderr);
 
-    // Execution of python
+    // Run python code
     let child = exec("python3 engine/engine.py " + diff.toString(),
         function(error, stdout, stderr) {
             if (error !== null) {
@@ -70,13 +69,11 @@ function launchPython() {
         solution = puzzle.slice(81);
     });
 
-    // kill the child process
-    myConsole.log('Timeout');
-    // Timeout is 9 sec
+    // Kill the python process if it takes more than 9 sec.
     setTimeout(function() {
-        myConsole.log('kill');
         child.stdin.pause();
         child.kill();
+        sys.exit(0);
     }, 9000);
 }
 
@@ -117,9 +114,6 @@ function fillPuzzle(array) {
 }
 
 function checkPuzzle() {
-    //let nodeConsole = require('console');
-    //let myConsole = new nodeConsole.Console(process.stdout, process.stderr);
-    //var table = document.getElementById('grid');
     let nums = document.getElementById('num_input').value;
     let count = 0;
     let blanks = 0;
@@ -149,10 +143,9 @@ function checkPuzzle() {
             k++;
         }
     }
-    // Display text if the user won
-    myConsole.log(count);
+    // Confetti if the user won.
     if (count === 0 && blanks === 0) {
-    	myConsole.log("won!");
+        confetti();
     }
 }
 

@@ -4,7 +4,6 @@ h1 {
     color: #1d1fbd;
 }
 
-/* First Window */
 /* Dropdown menu and difficulty */
 .dropdown {
     position: absolute;
@@ -15,11 +14,11 @@ h1 {
 }
 
 /* Buttons */
-#diffbutton,
+#diff-button,
 #difficulty,
-#solvebutton,
-#newbutton,
-#checkbutton {
+#solve-button,
+#new-button,
+#check-button {
     display: inline-block;
     padding: 0.3em 1.2em;
     margin: 0 0.1em 0.1em 0;
@@ -31,12 +30,44 @@ h1 {
     color: #1d1fbd;
     text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
     text-align: center;
+    width: 125px;
+    height: 40px;
     transition: all 0.2s;
-    font-size: 18px;
     color: #1d1fbd;
 }
 
-/* Second Window */
+/* Font for buttons */
+#diff-button,
+#difficulty,
+#solve-button,
+#check-button {
+    font-size: 16px;
+}
+
+#new-button {
+   font-size: 14px; 
+}
+
+/* Button positions */
+/* Solve button position */
+#solve-button-div {
+    position: absolute;
+    left: 15px;
+    bottom: 50px;
+}
+/* New button position */
+#new-button-div {
+    position: absolute;
+    right: 15px;
+    bottom: 50px;
+}
+/* Check button position */
+#check-button-div {
+    position: absolute;
+    left: 15px;
+    bottom: 500px;
+}
+
 /* Sudoku grid */
 #grid {
     text-align: center;
@@ -75,23 +106,4 @@ td:nth-child(3n) {
 
 tr:nth-child(3n) td {
     border-bottom: solid;
-}
-
-/* Solve button position */
-#solvediv {
-    position: absolute;
-    left: 30px;
-    bottom: 50px;
-}
-/* New button position */
-#newdiv {
-    position: absolute;
-    right: 7px;
-    bottom: 50px;
-}
-/* Check button position */
-#checkdiv {
-    position: absolute;
-    left: 30px;
-    bottom: 500px;
 }
